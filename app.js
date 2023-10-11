@@ -156,6 +156,6 @@ app.use((error, req, res, next) => {
     })
 })
 
-app.listen(4444, () => {
+app.listen(80, () => {
     console.log('server is running on port: 4444')
 })
