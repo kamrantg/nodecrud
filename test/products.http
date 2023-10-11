@@ -1,0 +1,112 @@
+### SHOW ALL PRODUCTS
+GET http://localhost:4444/products/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbXJhbnRnNiIsImlhdCI6MTY5NjIzNzEwOH0.UdLCc1goGNQveQBFd67Az9F1jcaBed3OXCaFOEoZJKY
+
+### SHOW SINGLE PRODUCT
+GET http://localhost:4444/products/6514cd5e1c4fd7768f11b069
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbXJhbnRnIiwiaWF0IjoxNjk2MjA4NTAyfQ.4LrF95ZBhBKzz61pc0mWjhbHLPZqYsZaaMo51-e_3xQ
+
+### CREATE NEW PRODUCT
+POST http://localhost:4444/products
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbXJhbnRnIiwiaWF0IjoxNjk2MjA4NTAyfQ.4LrF95ZBhBKzz61pc0mWjhbHLPZqYsZaaMo51-e_3xQ
+
+{
+    "name":"i mac",
+    "price":2364
+}
+
+### UPDATE PRODUCT
+PATCH  http://localhost:4444/products/6514cd5e1c4fd7768f11b069
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbXJhbnRnIiwiaWF0IjoxNjk2MjA4NTAyfQ.4LrF95ZBhBKzz61pc0mWjhbHLPZqYsZaaMo51-e_3xQ
+
+{
+    "price":100000
+}
+
+### DELETE PRODUCT
+DELETE http://localhost:4444/products/6514cd5e1c4fd7768f11b069
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbXJhbnRnIiwiaWF0IjoxNjk2MjA4NTAyfQ.4LrF95ZBhBKzz61pc0mWjhbHLPZqYsZaaMo51-e_3xQ
+
+
+
+### user info
+GET http://localhost:4444/auth/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbXJhbnRnMiIsImlhdCI6MTY5NjUxMjg5NH0.DtfHI6OA0mZoCrATq1A7_7zNePz0tRFgYAhAdAc3bxY
+
+### signup
+
+POST http://localhost:4444/auth/signup/
+Content-Type: application/json
+
+{
+    "fullname": "amir jafari",
+    "username": "amirjafari",
+    "password": "2552"
+}
+
+
+
+### login
+POST http://localhost:4444/auth/login/
+Content-Type: application/json
+
+{
+    "username": "amirjafari",
+    "password": "2552"
+}
+
+
+### logout 
+POST http://localhost:4444/auth/logout/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFtaXJqYWZhcmkiLCJpYXQiOjE2OTY4NzA2OTR9.VqPtXJAtSmrNU-44fKMxIw3EX9eY7Ttiwt6lx8AcTAc
+
+### get all posts
+GET http://localhost:4444/allposts/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFtaXJqYWZhcmkiLCJpYXQiOjE2OTY4NzA0MTd9.y7vYaeG5NtABkJv1L8aPb2SnQfRzLCdseVOsjPQwy9w
+
+### get single post
+GET http://localhost:4444/post/651e8dc9bffcf7f88f4f3d1d
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbXJhbnRnIiwiaWF0IjoxNjk2NDI5NDg3fQ.eNwHUYHdHaJ9iYy2cT_V8T8eXZ7RjXZdi9HA7VCdnrs
+
+
+### update post
+PATCH http://localhost:4444/posts/651d807a4acf51f062f4bf7d
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFtaXJqYWZhcmkiLCJpYXQiOjE2OTY4NzA2OTR9.VqPtXJAtSmrNU-44fKMxIw3EX9eY7Ttiwt6lx8AcTAc
+
+{
+    "isPublished":true
+}
+
+
+### delete post
+# for delete all -----> http://localhost:4444/posts/all
+DELETE http://localhost:4444/posts/651e72fbf3a54c9ec3f9c68d
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbXJhbnRnIiwiaWF0IjoxNjk2NDI5NDg3fQ.eNwHUYHdHaJ9iYy2cT_V8T8eXZ7RjXZdi9HA7VCdnrs
+
+
+### add new post
+POST http://localhost:4444/posts/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbXJhbnRnIiwiaWF0IjoxNjk2NDI5NDg3fQ.eNwHUYHdHaJ9iYy2cT_V8T8eXZ7RjXZdi9HA7VCdnrs
+
+# all parameters should be form data
+{
+    "title":"test post",
+    "description":"description for test post",
+    "isPublished":"true",
+    "content":"<h1>hello world</h1>"
+}
+
+### like post
+POST http://localhost:4444/posts/like/651d807a4acf51f062f4bf7d
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthbXJhbnRnIiwiaWF0IjoxNjk2NDI5NDg3fQ.eNwHUYHdHaJ9iYy2cT_V8T8eXZ7RjXZdi9HA7VCdnrs
+
