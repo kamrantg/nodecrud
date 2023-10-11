@@ -11,6 +11,7 @@ const cors = require('cors')
 const PostsRoutes = require('./Routes/Posts.route')
 const Post = require('./Models/Post.model')
 const mongoose = require('mongoose')
+// const wellcome = require('./html/index')
 app.use(express.json())
 app.use(cors())
 app.use(express.urlencoded({ extended: true }))
@@ -20,6 +21,11 @@ const AuthController = require('./Controllers/Auth.controller')
 app.use('/products', AuthController.auth, ProductsRoutes)
 app.use('/posts', AuthController.auth, PostsRoutes)
 app.use('/auth', authRoutes)
+
+
+app.get('/', (req, res, next) => {
+    res.sendFile(__dirname + '/html/index.html')
+})
 
 
 app.get('/allposts', async (req, res, next) => {
@@ -87,7 +93,6 @@ app.get('/allposts', async (req, res, next) => {
         next(e)
     }
 })
-
 
 
 app.get('/post/:id', async (req, res, next) => {
