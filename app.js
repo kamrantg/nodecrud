@@ -23,9 +23,9 @@ app.use('/posts', AuthController.auth, PostsRoutes)
 app.use('/auth', authRoutes)
 
 
-app.get('/', (req, res, next) => {
-    res.sendFile(__dirname + '/html/index.html')
-})
+// app.get('/', (req, res, next) => {
+//     res.sendFile(__dirname + '/html/index.html')
+// })
 
 
 app.get('/allposts', async (req, res, next) => {
